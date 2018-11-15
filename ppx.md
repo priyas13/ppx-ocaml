@@ -40,10 +40,9 @@ The following command is used to produce the AST of the above expression
 ocamlfind ppx_tools/dumpast -e "[let f x = x * x in f 5]"
 ```
 ![AST-let](https://github.com/priyas13/ppx-ocaml/blob/master/AST-let.png)
-```
 
 ### AST description
-[parsetree.mli](https://github.com/ocaml/ocaml/blob/trunk/parsing/parsetree.mli) contains the interface of the implementation of the grammar of AST generated during parsing.
-Grammar for the expression:
-```
+[parsetree.mli](https://github.com/ocaml/ocaml/blob/trunk/parsing/parsetree.mli) 
+contains the interface of the implementation of the grammar of AST generated during parsing.
+
 
