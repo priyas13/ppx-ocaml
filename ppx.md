@@ -65,9 +65,53 @@ ocamlfind ppx_tools/dumpast -e "[let f x = x * x in f 5]"
 In the above example 1 and 2, addone and multiplybyitself are the extension nodes that are extended by the ppx-rewriter.
 
 - PPX-rewriter is a binary that accepts an AST and transforms it into another AST. 
+- If we save the above code in a .ml file and try to compile it without using the PPX, it will give error because OCaml compiler is not familiar with the addone keyword. It is not present in the language syntax. 
 
 ### AST description
 [parsetree.mli](https://github.com/ocaml/ocaml/blob/trunk/parsing/parsetree.mli) 
 contains the interface of the implementation of the grammar of AST generated during parsing.
+
+### PPX for example 1:
+```
+open Ast_mapper
+open Ast_helper
+open Asttypes
+open Parsetree
+open Longident
+
+let expr_mapper mapper expr = 
+   begin match expr with
+      | { pexp_desc =
+          Pexp_extension ({ txt = "addone"; loc }, pstr)} ->
+        begin match pstr with
+        | PStr [{ pstr_desc =
+                  Pstr_eval (expression, _)}] -> 
+                            Exp.apply  (Exp.ident {txt = Lident "+"; loc=(!default_loc)})
+                                        [(Nolabel, expression);
+                                         (Nolabel, Exp.constant (Pconst_integer ("1", None)))]
+        | _ -> raise (Location.Error (Location.error ~loc "Syntax error"))                       
+        end
+      (* Delegate to the default mapper. *)
+      | x -> default_mapper.expr mapper x;
+  end
+
+let addone_mapper argv =
+  { 
+    default_mapper with
+    expr = expr_mapper;
+  }
+ 
+let () = register "addone" addone_mapper
+```
+- Line 98: addone_mapper is the custom mapper which replaces the expr field in the default mapper with our own expr_mapper. The expr_mapper only deals with expressions and patterns, hence all other AST types remains untouched. 
+- As in the example, we could see the expression is addone hence addone is the extension node.
+- The definition of expr_mapper matches the expression against an extension node with the identifier addone. So first the expression is matched against the extension node and then pattern match against the expression on line 88. 
+- addone 1 + 2 --> (1 + 2) + 1
+As we could see here addone is reduced to application of function + on the input 1 and 2.
+That is applying the function + on the original expression/payload provided in the expression addone 1 + 2 and a constant 1.
+
+### How to build up the rewriter?
+
+
 
 
