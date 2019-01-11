@@ -1,0 +1,5 @@
+"Rule: ocaml: cmx* & o* -> native (%=recursive_multiplybyitself_ppx )": "\225\227\162\024;!\1691k'\178R\215\244\241O"
+"Rule: ocaml: ml & cmi -> cmx & o (%=recursive_multiplybyitself_ppx )": "\151}\242\137A\028r\140D\235x\177\228\030\221\199"
+"Rule: ocaml: ml -> cmo & cmi (%=recursive_multiplybyitself_ppx )": "\212YM?\183\196\137\244o\148\183\166\195\225G\254"
+"Rule: ocaml dependencies ml (%=recursive_multiplybyitself_ppx )": "\224\158\159\137\247[\150\172\200\003\141\241\138k\021\211"
+"Resource: /Users/swarnpriya/Desktop/Purdue_research/git-repos/ppx-ocaml/examples/recursive_multiplybyitself/recursive_multiplybyitself_ppx.ml": "\179\217\211\006}C\223\179\015\019Q\031]\175Hj"
