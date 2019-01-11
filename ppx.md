@@ -1,5 +1,6 @@
 # ppx-ocaml
 * PPX stands for “PreProcessor eXtensions” which allows the users to add entirely new syntax and features to the OCaml language.
+* Writting a preprocessor that takes a program written in an extended syntax and convert it into the vanilla programming language is a tedious job. 
 * PPX are implemented as OCaml programs which are plugged into the OCaml compiler.
 * A ppx-rewriter is a binary which receives an AST produced by the parser, performs some transformation, and outputs a modified AST.
 * A typical ppx is ppx_deriving [@@_] which automatically generated code from OCaml data structures.
