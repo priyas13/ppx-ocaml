@@ -1,0 +1,5 @@
+"Resource: /Users/swarnpriya/Desktop/Purdue_research/git-repos/ppx-ocaml/examples/multiplybyitself_ppx.ml": "\209\158\127q67\004\239\201\217U\023\014\132yE"
+"Rule: ocaml: ml -> cmo & cmi (%=multiplybyitself_ppx )": "\181\193e\129Y\234B\211#\1373 \251\253\0057"
+"Rule: ocaml dependencies ml (%=multiplybyitself_ppx )": "\250X\021\195\183\144\186A\237\186\253\236K\187H\246"
+"Rule: ocaml: cmx* & o* -> native (%=multiplybyitself_ppx )": "Zeib\185^\nL\235n\241xs\158V\r"
+"Rule: ocaml: ml & cmi -> cmx & o (%=multiplybyitself_ppx )": "m.\209\134P\234lD$s\024\238\206=\222\200"

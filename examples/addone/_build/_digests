@@ -1,0 +1,5 @@
+"Rule: ocaml: ml & cmi -> cmx & o (%=addone_ppx )": "\244\145\017`x\017\026\228M^[\191\n \211\208"
+"Resource: /Users/swarnpriya/Desktop/Purdue_research/git-repos/ppx-ocaml/examples/addone/addone_ppx.ml": "\186*'q\198KmR\215\173(\182\131\242YO"
+"Rule: ocaml dependencies ml (%=addone_ppx )": "'\004\252\012\241\192\145\169\000\027\237\018NT\240@"
+"Rule: ocaml: cmx* & o* -> native (%=addone_ppx )": "\161\208.\171;OM\242\221\156\0009M\132\250<"
+"Rule: ocaml: ml -> cmo & cmi (%=addone_ppx )": "\232\193\220\2020\224/\193\163vJ\016n\149\254\198"

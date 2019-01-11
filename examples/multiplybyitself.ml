@@ -1,0 +1,1 @@
+[%multiplybyitself 2]
