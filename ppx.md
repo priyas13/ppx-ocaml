@@ -127,6 +127,9 @@ Suppose for the above example, [%multiplybyitself 2], we want to have recursive 
 [%multiplybyitself [%multiplybyitself 2]] should get reduce to (2 * 2) * (2 * 2).
 The code can be found in the example section [recursive_multiplybyitself](https://github.com/priyas13/ppx-ocaml/tree/master/examples/recursive_multiplybyitself)
 
+### Now comes how to deal with the version issue of OCaml compiler?
+As we discussed earlier, AST generated may vary depending on the version of the OCaml compiler used to generate it. And hence, ppx rewriter might fail in that case. AST datatypes differ slightly between versions. Either we coukd change the file manually or there exist an automatic library to do so. 
+
 
 
 
