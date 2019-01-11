@@ -45,13 +45,13 @@ ocamlfind ppx_tools/dumpast -e "[%addone 1 + 2]"
 ```
 ![AST-addone](https://github.com/priyas13/ppx-ocaml/blob/master/AST-addone.png)
 
-Another example:
+### Example 2
 ```
 ocamlfind ppx_tools/dumpast -e "[%multiplybyitself 2 * 2]"
 ```
 ![AST-mult](https://github.com/priyas13/ppx-ocaml/blob/master/AST-mult.png)
 
-### Example 2
+### Example 3
 ```
 [let f x = x * x in f 5]
 ```
