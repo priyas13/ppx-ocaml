@@ -47,8 +47,9 @@ ocamlfind ppx_tools/dumpast -e "[%addone 1 + 2]"
 
 ### Example 2
 ```
-ocamlfind ppx_tools/dumpast -e "[%multiplybyitself 2 * 2]"
+ocamlfind ppx_tools/dumpast -e "[%multiplybyitself 2]"
 ```
+multiplybyitself 2 --> 2 * 2
 ![AST-mult](https://github.com/priyas13/ppx-ocaml/blob/master/AST-mult.png)
 
 ### Example 3
@@ -60,6 +61,10 @@ The following command is used to produce the AST of the above expression
 ocamlfind ppx_tools/dumpast -e "[let f x = x * x in f 5]"
 ```
 ![AST-let](https://github.com/priyas13/ppx-ocaml/blob/master/AST-let.png)
+
+In the above example 1 and 2, addone and multiplybyitself are the extension nodes that are extended by the ppx-rewriter.
+
+- PPX-rewriter is a binary that accepts an AST and transforms it into another AST. 
 
 ### AST description
 [parsetree.mli](https://github.com/ocaml/ocaml/blob/trunk/parsing/parsetree.mli) 
