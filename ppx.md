@@ -122,6 +122,13 @@ ocamlfind ppx_tools/rewriter ./multiplybyitself_ppx.native multiplybyitself.ml
 ```
 This outputs 2 * 2. This tool allows outputting rewritten source code to a file rather than stdout. 
 
+## How to deal with recursion?
+Suppose for the above example, [%multiplybyitself 2], we want to have recursive call to multiplybyitself. Something like this [%multiplybyitself [%multiplybyitself 2]]. 
+[%multiplybyitself [%multiplybyitself 2]] should get reduce to (2 * 2) * (2 * 2).
+The code can be found in the example section [recursive_multiplybyitself](https://github.com/priyas13/ppx-ocaml/tree/master/examples/recursive_multiplybyitself)
+
+
+
 
 
 
