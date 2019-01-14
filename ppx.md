@@ -103,7 +103,7 @@ let multiplybyitself_mapper argv =
 
 let () = register "multiplybyitself" multiplybyitself_mapper
 ```
-- Line 98: addone_mapper is the custom mapper which replaces the expr field in the default mapper with our own expr_mapper. The expr_mapper only deals with expressions and patterns, hence all other AST types remains untouched. 
+- Line 98: multiplybyitself_mapper is the custom mapper which replaces the expr field in the default mapper with our own expr_mapper. The expr_mapper only deals with expressions and patterns, hence all other AST types remains untouched. 
 - As in the example, we could see the expression is addone hence addone is the extension node.
 - The definition of expr_mapper matches the expression against an extension node with the identifier addone. So first the expression is matched against the extension node and then pattern match against the expression on line 88. 
 - multiplybyitself 2 --> 2 * 2
@@ -112,7 +112,7 @@ That is applying the function * on the original expression/payload provided in t
 
 ### How to build up the rewriter?
 ```
-ocamlbuild -package compiler-libs.common multiplybyitself.native
+ocamlbuild -package compiler-libs.common multiplybyitself_ppx.native
 ```
 The above command build up the ppx rewriter. Dependency is compiler-libs which is the place for necessary modules. 
 
