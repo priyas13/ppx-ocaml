@@ -50,7 +50,7 @@ ocamlfind ppx_tools/dumpast -e "[%addone 1 + 2]"
 ocamlfind ppx_tools/dumpast -e "[%multiplybyitself 2]"
 ```
 multiplybyitself 2 --> 2 * 2
-![AST-mult](https://github.com/priyas13/ppx-ocaml/blob/master/AST-mult.png)
+![AST-mult](https://github.com/priyas13/ppx-ocaml/blob/master/multiplybyitself-AST-4.05.png)
 
 ### Example 3
 ```
